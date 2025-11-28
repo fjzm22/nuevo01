@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="filehub.UploadController"
+            styleClass="root-background">
+
+    <top>
+        <HBox spacing="10" styleClass="top-bar">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <children>
+                <Label text="FileHubFX" styleClass="title-label-small"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="lblUser" text="Usuario:" styleClass="user-label"/>
+                <Button text="Cerrar sesión" onAction="#onLogoutClicked" styleClass="secondary-button"/>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_LEFT" spacing="15" styleClass="glass-card">
+            <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+            <children>
+
+                <Label text="Administración de Archivos" styleClass="section-title"/>
+
+                <Label text="Carpeta:" styleClass="file-label"/>
+                <ComboBox fx:id="comboBranch" prefWidth="220" styleClass="glass-combo"/>
+
+                <!-- SUBIR ARCHIVOS -->
+                <HBox spacing="10">
+                    <children>
+                        <Button fx:id="btnChoose" text="Elegir archivo..." onAction="#onChooseFileClicked" styleClass="primary-button-outline"/>
+                        <Label fx:id="lblFile" text="Archivo: ninguno seleccionado" styleClass="file-label"/>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10">
+                    <children>
+                        <Button fx:id="btnUpload" text="Subir archivo" onAction="#onUploadClicked" styleClass="primary-button"/>
+                        <ProgressBar fx:id="progressBar" prefWidth="200"/>
+                    </children>
+                </HBox>
+
+                <!-- DESCARGA -->
+                <Button fx:id="btnDownload" text="Descargar archivo" onAction="#onDownloadClicked" styleClass="primary-button"/>
+
+                <Label fx:id="lblStatus" styleClass="message-label"/>
+
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
