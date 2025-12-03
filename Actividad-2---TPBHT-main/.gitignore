@@ -1,0 +1,28 @@
+# Gradle
+.gradle
+build/
+out/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# IntelliJ / Eclipse / NetBeans
+.idea/
+*.iml
+*.ipr
+*.iws
+nbproject/private/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated
+bin/
